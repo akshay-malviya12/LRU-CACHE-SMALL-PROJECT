@@ -22,29 +22,44 @@
 ### Get All key-value pair .
 5)curl -X POST -H "Content-Type: application/json" http://localhost:8080/GetAllLRUCases
 
-### ReactJS For Front-end.
-### ReactJs - I have create set capacity for LRU cache set value in number(Integer).If you want to set capacity in LRU cache then you have to set capacity in set capacity section. For Example if you want to set capacity as 10 then you have to set capacity as 10 in set capacity section.you can set capacity as any number.if you set capacity you don't add more than 10 key-value pair in LRU cache.if you add more than 10 key-value pair show error message capacity is full. I have set default expire time as 5 seconds.after 5 seconds auto delete key ,than you enter new key-value pair and you can see message added to LRU cache successfully.
 
-### I have create set key and value in input box for set key-value pair.than you enter key and value than you can see message added to cache successfully.
-### I have create get key in input box for get key pair.than you enter key ,key related value show in the table.
-### I have create user delete key in input box for delete key-value pair.
+### ReactJS for Front-end.
+### LRU Cache Capacity Configuration:
+In the LRU cache settings, you can specify the capacity by entering a number (integer). For instance, if you wish to set the capacity to 10,
+simply enter "10" in the designated section. You can set the capacity to any desired number. Once a capacity is set, you should not exceed 
+the specified limit when adding key-value pairs to the LRU cache. If you attempt to add more than the specified capacity, an error message 
+indicating that the capacity is full will be displayed.
 
-GoLang BackEnd 
-### This LRU Cache implmentation in Go provide  a simple and efficient way to store a LRU cache in key- value pair and expire time limit with maximum capacity.
-### The LRU Cache is a data structure that stores a fixed number of items, with the most recently used item being removed when the cache is full(after 5 seconds because i have set time limit).
+### Default Expiry Time:
+By default, the expiry time for each key-value pair is set to 5 seconds. After this time period elapses, the key-value pair is automatically 
+removed from the cache. 
 
-### The LRUCache is useful for caching frequently accessed data, such as data that is frequently accessed but not frequently updated.
+### Functionality Overview:
+1) Set Key-Value Pair:
+Enter the key and value in the input boxes provided. After adding the key-value pair, you will receive a success message confirming that it 
+has been added to the cache.
+2)Get Value for a Key:
+Enter the key in the input box designated for retrieving key-value pairs. Once the key is entered, the corresponding value will be displayed 
+in the table.
+3)Delete Key-Value Pair:
+Enter the key in the input box provided for deletion of the key-value pair. Upon deletion, you will receive a confirmation message.
 
-### First of all,i have set data in LRU Cache with key and value and expire time.This data added in LRU Cache dynamically and i tested this set function use of Curl request.This is completly working fine.
+### GoLang backend 
+### LRU Cache Implementation in Go
+### The LRU Cache implementation in Go provides a simple and efficient way to store key-value pairs with an expiration time limit and a maximum capacity.
 
+### LRU Cache is a data structure that stores a fixed number of items, removing the least recently used item when the cache is full (after 5 seconds, as I have set the time limit).
 
-### Now,i have created a GetCache function which is used to get the value from the cache by key and key get dynamically from url.This is also working fine.
+### LRU Cache is useful for caching frequently accessed data, particularly data that is frequently accessed but not frequently updated.
 
+### Firstly, I've implemented a function to set data in the LRU Cache with a key, value, and expiration time. This function adds data to the LRU Cache dynamically, and I've tested it using Curl requests, which is working perfectly.
 
-### Now,i have created a DelelteCache function which is used to delete the cache by key and key get dynamically from url.This is also working fine.
+### Next, I've implemented a GetCache function to retrieve a value from the cache by its key, with the key obtained dynamically from the URL. This function is also working correctly.
 
+### Then, I've created a DeleteCache function to delete cache entries by their key, with the key obtained dynamically from the URL. This function is functioning properly as well.
 
-### Now,i have created a GetAllKeys function which is used to get all keys and values from the LRU cache. only for satisfaction(checking count Total LRU Cache availble on time accoding condition and code logic) how much key enter in LRU Cache.This is also working fine.
+###Following that, I've implemented a GetAllKeys function to retrieve all keys and values from the LRU cache. This function provides a way to check the total number of keys available in the LRU Cache at a given time, ensuring the correctness of the code logic. This function is also working correctly.
 
-### than ,i have creaeted front-end side Reactjs and back-end side Golang.
-### i have sent requets to back-end side Golang and get response in json format.This is completly working API Formate.
+### Additionally, I've created a frontend using React.js and a backend using Golang. Requests are sent to the Golang backend, and responses are received in JSON format, providing a fully functional API.
+
+### This setup allows for efficient communication between the frontend and backend, ensuring smooth data retrieval and manipulation.

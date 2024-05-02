@@ -117,7 +117,7 @@ func SetCache(w http.ResponseWriter, r *http.Request) {
 		resp.Payload.Key = cache.Key
 		resp.Payload.Value = cache.Value
 		resp.Payload.ExpireTime = cache.CacheExpireTime.Format(time.RFC3339)
-		setGetCacheValue.GetAllKeys()
+		//setGetCacheValue.GetAllKeys()
 		ResponseGenerateJson(w, r, "Success", msg, resp.Payload)
 		return
 	}

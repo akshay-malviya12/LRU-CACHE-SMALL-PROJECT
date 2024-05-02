@@ -84,7 +84,7 @@ func (c *CacheLRU) DelelteOldest() {
 // Delete cache by user key directly from the LRU cache.
 func (c *CacheLRU) CacheDeleteByUserKeyDirectly(key string) bool {
 	// delete the key from the cache
-	c.GetAllKeys()
+	//c.GetAllKeys()
 	delete(c.cache, key)
 	return true
 }

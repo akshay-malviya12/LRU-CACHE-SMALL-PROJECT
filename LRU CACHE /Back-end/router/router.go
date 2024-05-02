@@ -8,17 +8,37 @@ import (
 
 func Router(w http.ResponseWriter, r *http.Request) {
 	route := strings.Trim(r.URL.Path, "/")
-
+        msg:="Please provide a valid method."
+	
 	switch route {
 	case "":
 		w.Write([]byte("Welcome to the homepage!"))
 	case "setcache":
-		controllers.SetCache(w, r)		
+		if r.Method =="POST"{
+		   controllers.SetCache(w, r)
+		}else{
+                  ResponseGenerateJson(w,r,"Failure",msg,"")
+		}
+				
 	case "getcache":
-		controllers.GetCache(w, r)		
+		if r.Method =="GET"{
+		   controllers.GetCache(w, r)
+		}else{
+                  ResponseGenerateJson(w,r,"Failure",msg,"")
+		}
+				
 	case "deletecache":
-		controllers.DeleteCache(w, r)
+		if r.Method =="DELETE"{
+		   controllers.DeleteCache(w, r)
+		}else{
+                  ResponseGenerateJson(w,r,"Failure",msg,"")
+		}
+		
 	case "setcapacity":
-		controllers.SetCapacity(w, r)
-	}
+		if r.Method =="POST"{
+		   controllers.SetCapacity(w, r)
+		}else{
+                  ResponseGenerateJson(w,r,"Failure",msg,"")
+		}
+		}
 }

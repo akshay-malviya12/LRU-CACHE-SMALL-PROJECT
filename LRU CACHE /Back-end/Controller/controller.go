@@ -29,7 +29,11 @@ func SetCapacity(w http.ResponseWriter, r *http.Request) {
 	// Get the capacity from the request URL.
 	capacityInt := StringToInt(r.URL.Query().Get("capacity"))
 	log.Println("capacityInt", capacityInt)
-	capacityInt = 5
+	if (capacityInt <= 0){
+	//set default capacity.
+           capacityInt = 5
+	}
+	
 	// calling for set LRU cache function with capcity of key value pair(int).
 	setGetCacheValue = models.NewCacheLRU(capacityInt)
 }

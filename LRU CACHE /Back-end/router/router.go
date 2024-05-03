@@ -17,28 +17,28 @@ func Router(w http.ResponseWriter, r *http.Request) {
 		if r.Method =="POST"{
 		   controllers.SetCache(w, r)
 		}else{
-                  ResponseGenerateJson(w,r,"Failure",msg,"")
+                 controllers.ResponseGenerateJson(w,r,"Failure",msg,"")
 		}
 				
 	case "getcache":
 		if r.Method =="GET"{
 		   controllers.GetCache(w, r)
 		}else{
-                  ResponseGenerateJson(w,r,"Failure",msg,"")
+                 controllers.ResponseGenerateJson(w,r,"Failure",msg,"")
 		}
 				
 	case "deletecache":
 		if r.Method =="DELETE"{
 		   controllers.DeleteCache(w, r)
 		}else{
-                  ResponseGenerateJson(w,r,"Failure",msg,"")
+                controllers.ResponseGenerateJson(w,r,"Failure",msg,"")
 		}
 		
 	case "setcapacity":
 		if r.Method =="POST"{
 		   controllers.SetCapacity(w, r)
 		}else{
-                  ResponseGenerateJson(w,r,"Failure",msg,"")
+                controllers.ResponseGenerateJson(w,r,"Failure",msg,"")
 		}
 		}
 }
